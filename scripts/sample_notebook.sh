@@ -4,6 +4,7 @@ if [ ! -d /data/demo ]; then
     cp -a /usr/local/samples /data/demo
 fi
 
-# /etc/init.d/ssh start
+chown root:root /var/run/sshd
+/etc/init.d/ssh start
 exec /usr/local/bin/nimbix_notebook "$@"
 
