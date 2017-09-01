@@ -36,4 +36,5 @@ RUN apt-get install -y python-scipy
 RUN pip install scikit-learn
 RUN apt-get install -y libxml2-dev libxmlsec1-dev
 
-RUN /etc/init.d/ssh start
+RUN chmod 644 /etc/ssh/*_key
+RUN chown root:root /var/run/sshd
